@@ -1,0 +1,782 @@
+.react-flow {
+  direction: ltr;
+}
+.react-flow__container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.react-flow__pane {
+  z-index: 1;
+  cursor: grab;
+}
+.react-flow__pane.selection {
+  cursor: pointer;
+}
+.react-flow__pane.dragging {
+  cursor: grabbing;
+}
+.react-flow__viewport {
+  transform-origin: 0 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.react-flow__renderer {
+  z-index: 4;
+}
+.react-flow__selection {
+  z-index: 6;
+}
+.react-flow__nodesselection-rect:focus,
+.react-flow__nodesselection-rect:focus-visible {
+  outline: none;
+}
+.react-flow .react-flow__edges {
+  pointer-events: none;
+  overflow: visible;
+}
+.react-flow__connection-path,
+.react-flow__edge-path {
+  stroke: #b1b1b7;
+  stroke-width: 1;
+  fill: none;
+}
+.react-flow__edge {
+  pointer-events: visibleStroke;
+  cursor: pointer;
+}
+.react-flow__edge.animated path {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.5s linear infinite;
+}
+.react-flow__edge.animated path.react-flow__edge-interaction {
+  stroke-dasharray: none;
+  animation: none;
+}
+.react-flow__edge.inactive {
+  pointer-events: none;
+}
+.react-flow__edge.selected,
+.react-flow__edge:focus,
+.react-flow__edge:focus-visible {
+  outline: none;
+}
+.react-flow__edge.selected .react-flow__edge-path,
+.react-flow__edge:focus .react-flow__edge-path,
+.react-flow__edge:focus-visible .react-flow__edge-path {
+  stroke: #555;
+}
+.react-flow__edge-textwrapper {
+  pointer-events: all;
+}
+.react-flow__edge-textbg {
+  fill: #fff;
+}
+.react-flow__edge .react-flow__edge-text {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.react-flow__connection {
+  pointer-events: none;
+}
+.react-flow__connection .animated {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.5s linear infinite;
+}
+.react-flow__connectionline {
+  z-index: 1001;
+}
+.react-flow__nodes {
+  pointer-events: none;
+  transform-origin: 0 0;
+}
+.react-flow__node {
+  position: absolute;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  pointer-events: all;
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  cursor: grab;
+}
+.react-flow__node.dragging {
+  cursor: grabbing;
+}
+.react-flow__nodesselection {
+  z-index: 3;
+  transform-origin: left top;
+  pointer-events: none;
+}
+.react-flow__nodesselection-rect {
+  position: absolute;
+  pointer-events: all;
+  cursor: grab;
+}
+.react-flow__handle {
+  position: absolute;
+  pointer-events: none;
+  min-width: 5px;
+  min-height: 5px;
+  width: 6px;
+  height: 6px;
+  background: #1a192b;
+  border: 1px solid #fff;
+  border-radius: 100%;
+}
+.react-flow__handle.connectionindicator {
+  pointer-events: all;
+  cursor: crosshair;
+}
+.react-flow__handle-bottom {
+  top: auto;
+  left: 50%;
+  bottom: -4px;
+  transform: translate(-50%);
+}
+.react-flow__handle-top {
+  left: 50%;
+  top: -4px;
+  transform: translate(-50%);
+}
+.react-flow__handle-left {
+  top: 50%;
+  left: -4px;
+  transform: translateY(-50%);
+}
+.react-flow__handle-right {
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.react-flow__edgeupdater {
+  cursor: move;
+  pointer-events: all;
+}
+.react-flow__panel {
+  position: absolute;
+  z-index: 5;
+  margin: 15px;
+}
+.react-flow__panel.top {
+  top: 0;
+}
+.react-flow__panel.bottom {
+  bottom: 0;
+}
+.react-flow__panel.left {
+  left: 0;
+}
+.react-flow__panel.right {
+  right: 0;
+}
+.react-flow__panel.center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.react-flow__attribution {
+  font-size: 10px;
+  background: hsla(0, 0%, 100%, 0.5);
+  padding: 2px 3px;
+  margin: 0;
+}
+.react-flow__attribution a {
+  text-decoration: none;
+  color: #999;
+}
+@keyframes dashdraw {
+  0% {
+    stroke-dashoffset: 10;
+  }
+}
+.react-flow__edgelabel-renderer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.react-flow__edge.updating .react-flow__edge-path {
+  stroke: #777;
+}
+.react-flow__edge-text {
+  font-size: 10px;
+}
+.react-flow__node.selectable:focus,
+.react-flow__node.selectable:focus-visible {
+  outline: none;
+}
+.react-flow__node-default,
+.react-flow__node-group,
+.react-flow__node-input,
+.react-flow__node-output {
+  padding: 10px;
+  border-radius: 3px;
+  width: 150px;
+  font-size: 12px;
+  color: #222;
+  text-align: center;
+  border: 1px solid #1a192b;
+  background-color: #fff;
+}
+.react-flow__node-default.selectable:hover,
+.react-flow__node-group.selectable:hover,
+.react-flow__node-input.selectable:hover,
+.react-flow__node-output.selectable:hover {
+  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.08);
+}
+.react-flow__node-default.selectable.selected,
+.react-flow__node-default.selectable:focus,
+.react-flow__node-default.selectable:focus-visible,
+.react-flow__node-group.selectable.selected,
+.react-flow__node-group.selectable:focus,
+.react-flow__node-group.selectable:focus-visible,
+.react-flow__node-input.selectable.selected,
+.react-flow__node-input.selectable:focus,
+.react-flow__node-input.selectable:focus-visible,
+.react-flow__node-output.selectable.selected,
+.react-flow__node-output.selectable:focus,
+.react-flow__node-output.selectable:focus-visible {
+  box-shadow: 0 0 0 0.5px #1a192b;
+}
+.react-flow__node-group {
+  background-color: hsla(0, 0%, 94%, 0.25);
+}
+.react-flow__nodesselection-rect,
+.react-flow__selection {
+  background: rgba(0, 89, 220, 0.08);
+  border: 1px dotted rgba(0, 89, 220, 0.8);
+}
+.react-flow__nodesselection-rect:focus,
+.react-flow__nodesselection-rect:focus-visible,
+.react-flow__selection:focus,
+.react-flow__selection:focus-visible {
+  outline: none;
+}
+.react-flow__controls {
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.08);
+}
+.react-flow__controls-button {
+  background: #fefefe;
+  border: none;
+  border-bottom: 1px solid #eee;
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  padding: 5px;
+}
+.react-flow__controls-button:hover {
+  background: #f4f4f4;
+}
+.react-flow__controls-button svg {
+  width: 100%;
+  max-width: 12px;
+  max-height: 12px;
+}
+.react-flow__controls-button:disabled {
+  pointer-events: none;
+}
+.react-flow__controls-button:disabled svg {
+  fill-opacity: 0.4;
+}
+.react-flow__minimap {
+  background-color: #fff;
+}
+.react-flow__minimap svg {
+  display: block;
+}
+.react-flow__resize-control {
+  position: absolute;
+}
+.react-flow__resize-control.left,
+.react-flow__resize-control.right {
+  cursor: ew-resize;
+}
+.react-flow__resize-control.bottom,
+.react-flow__resize-control.top {
+  cursor: ns-resize;
+}
+.react-flow__resize-control.bottom.right,
+.react-flow__resize-control.top.left {
+  cursor: nwse-resize;
+}
+.react-flow__resize-control.bottom.left,
+.react-flow__resize-control.top.right {
+  cursor: nesw-resize;
+}
+.react-flow__resize-control.handle {
+  width: 4px;
+  height: 4px;
+  border: 1px solid #fff;
+  border-radius: 1px;
+  background-color: #3367d9;
+  transform: translate(-50%, -50%);
+}
+.react-flow__resize-control.handle.left {
+  left: 0;
+  top: 50%;
+}
+.react-flow__resize-control.handle.right {
+  left: 100%;
+  top: 50%;
+}
+.react-flow__resize-control.handle.top {
+  left: 50%;
+  top: 0;
+}
+.react-flow__resize-control.handle.bottom {
+  left: 50%;
+  top: 100%;
+}
+.react-flow__resize-control.handle.bottom.left,
+.react-flow__resize-control.handle.top.left {
+  left: 0;
+}
+.react-flow__resize-control.handle.bottom.right,
+.react-flow__resize-control.handle.top.right {
+  left: 100%;
+}
+.react-flow__resize-control.line {
+  border: 0 solid #3367d9;
+}
+.react-flow__resize-control.line.left,
+.react-flow__resize-control.line.right {
+  width: 1px;
+  transform: translate(-50%);
+  top: 0;
+  height: 100%;
+}
+.react-flow__resize-control.line.left {
+  left: 0;
+  border-left-width: 1px;
+}
+.react-flow__resize-control.line.right {
+  left: 100%;
+  border-right-width: 1px;
+}
+.react-flow__resize-control.line.bottom,
+.react-flow__resize-control.line.top {
+  height: 1px;
+  transform: translateY(-50%);
+  left: 0;
+  width: 100%;
+}
+.react-flow__resize-control.line.top {
+  top: 0;
+  border-top-width: 1px;
+}
+.react-flow__resize-control.line.bottom {
+  border-bottom-width: 1px;
+  top: 100%;
+}
+@font-face {
+  font-family: __IBM_Plex_Mono_20d375;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/b6f2eee8808a2bb4-s.woff2) format("woff2");
+  unicode-range: u+0460-052f, u+1c80-1c88, u+20b4, u+2de0-2dff, u+a640-a69f,
+    u+fe2e-fe2f;
+}
+@font-face {
+  font-family: __IBM_Plex_Mono_20d375;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/bc2003170c651d45-s.woff2) format("woff2");
+  unicode-range: u+0301, u+0400-045f, u+0490-0491, u+04b0-04b1, u+2116;
+}
+@font-face {
+  font-family: __IBM_Plex_Mono_20d375;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/d43ef4503e5571d0-s.woff2) format("woff2");
+  unicode-range: u+0102-0103, u+0110-0111, u+0128-0129, u+0168-0169, u+01a0-01a1,
+    u+01af-01b0, u+0300-0301, u+0303-0304, u+0308-0309, u+0323, u+0329,
+    u+1ea0-1ef9, u+20ab;
+}
+@font-face {
+  font-family: __IBM_Plex_Mono_20d375;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/3281a323710833ec-s.p.woff2) format("woff2");
+  unicode-range: u+0100-02af, u+0304, u+0308, u+0329, u+1e00-1e9f, u+1ef2-1eff,
+    u+2020, u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
+@font-face {
+  font-family: __IBM_Plex_Mono_20d375;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/684e5662d94c69e1-s.woff2) format("woff2");
+  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da,
+    u+02dc, u+0304, u+0308, u+0329, u+2000-206f, u+2074, u+20ac, u+2122, u+2191,
+    u+2193, u+2212, u+2215, u+feff, u+fffd;
+}
+@font-face {
+  font-family: __IBM_Plex_Mono_20d375;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/97b12f7b815cdf76-s.woff2) format("woff2");
+  unicode-range: u+0460-052f, u+1c80-1c88, u+20b4, u+2de0-2dff, u+a640-a69f,
+    u+fe2e-fe2f;
+}
+@font-face {
+  font-family: __IBM_Plex_Mono_20d375;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/19fc70611c7ee6d5-s.woff2) format("woff2");
+  unicode-range: u+0301, u+0400-045f, u+0490-0491, u+04b0-04b1, u+2116;
+}
+@font-face {
+  font-family: __IBM_Plex_Mono_20d375;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/01721b474504e7d6-s.woff2) format("woff2");
+  unicode-range: u+0102-0103, u+0110-0111, u+0128-0129, u+0168-0169, u+01a0-01a1,
+    u+01af-01b0, u+0300-0301, u+0303-0304, u+0308-0309, u+0323, u+0329,
+    u+1ea0-1ef9, u+20ab;
+}
+@font-face {
+  font-family: __IBM_Plex_Mono_20d375;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/3ccf24bed29cbb82-s.p.woff2) format("woff2");
+  unicode-range: u+0100-02af, u+0304, u+0308, u+0329, u+1e00-1e9f, u+1ef2-1eff,
+    u+2020, u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
+@font-face {
+  font-family: __IBM_Plex_Mono_20d375;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/be2416cbb012c256-s.woff2) format("woff2");
+  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da,
+    u+02dc, u+0304, u+0308, u+0329, u+2000-206f, u+2074, u+20ac, u+2122, u+2191,
+    u+2193, u+2212, u+2215, u+feff, u+fffd;
+}
+@font-face {
+  font-family: __IBM_Plex_Mono_Fallback_20d375;
+  src: local("Arial");
+  ascent-override: 75.41%;
+  descent-override: 20.23%;
+  line-gap-override: 0%;
+  size-adjust: 135.93%;
+}
+.__className_20d375 {
+  font-family: __IBM_Plex_Mono_20d375, __IBM_Plex_Mono_Fallback_20d375;
+  font-style: normal;
+}
+.__variable_20d375 {
+  --ibm-plex-mono: "__IBM_Plex_Mono_20d375", "__IBM_Plex_Mono_Fallback_20d375";
+}
+@font-face {
+  font-family: __Work_Sans_14fb11;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/0822b6067e7c0dee-s.woff2) format("woff2");
+  unicode-range: u+0102-0103, u+0110-0111, u+0128-0129, u+0168-0169, u+01a0-01a1,
+    u+01af-01b0, u+0300-0301, u+0303-0304, u+0308-0309, u+0323, u+0329,
+    u+1ea0-1ef9, u+20ab;
+}
+@font-face {
+  font-family: __Work_Sans_14fb11;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/67354d9f27664b22-s.p.woff2) format("woff2");
+  unicode-range: u+0100-02af, u+0304, u+0308, u+0329, u+1e00-1e9f, u+1ef2-1eff,
+    u+2020, u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
+@font-face {
+  font-family: __Work_Sans_14fb11;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/6905431624c34d00-s.woff2) format("woff2");
+  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da,
+    u+02dc, u+0304, u+0308, u+0329, u+2000-206f, u+2074, u+20ac, u+2122, u+2191,
+    u+2193, u+2212, u+2215, u+feff, u+fffd;
+}
+@font-face {
+  font-family: __Work_Sans_14fb11;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/0822b6067e7c0dee-s.woff2) format("woff2");
+  unicode-range: u+0102-0103, u+0110-0111, u+0128-0129, u+0168-0169, u+01a0-01a1,
+    u+01af-01b0, u+0300-0301, u+0303-0304, u+0308-0309, u+0323, u+0329,
+    u+1ea0-1ef9, u+20ab;
+}
+@font-face {
+  font-family: __Work_Sans_14fb11;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/67354d9f27664b22-s.p.woff2) format("woff2");
+  unicode-range: u+0100-02af, u+0304, u+0308, u+0329, u+1e00-1e9f, u+1ef2-1eff,
+    u+2020, u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
+@font-face {
+  font-family: __Work_Sans_14fb11;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/6905431624c34d00-s.woff2) format("woff2");
+  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da,
+    u+02dc, u+0304, u+0308, u+0329, u+2000-206f, u+2074, u+20ac, u+2122, u+2191,
+    u+2193, u+2212, u+2215, u+feff, u+fffd;
+}
+@font-face {
+  font-family: __Work_Sans_14fb11;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/0822b6067e7c0dee-s.woff2) format("woff2");
+  unicode-range: u+0102-0103, u+0110-0111, u+0128-0129, u+0168-0169, u+01a0-01a1,
+    u+01af-01b0, u+0300-0301, u+0303-0304, u+0308-0309, u+0323, u+0329,
+    u+1ea0-1ef9, u+20ab;
+}
+@font-face {
+  font-family: __Work_Sans_14fb11;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/67354d9f27664b22-s.p.woff2) format("woff2");
+  unicode-range: u+0100-02af, u+0304, u+0308, u+0329, u+1e00-1e9f, u+1ef2-1eff,
+    u+2020, u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
+@font-face {
+  font-family: __Work_Sans_14fb11;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/6905431624c34d00-s.woff2) format("woff2");
+  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da,
+    u+02dc, u+0304, u+0308, u+0329, u+2000-206f, u+2074, u+20ac, u+2122, u+2191,
+    u+2193, u+2212, u+2215, u+feff, u+fffd;
+}
+@font-face {
+  font-family: __Work_Sans_14fb11;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/0822b6067e7c0dee-s.woff2) format("woff2");
+  unicode-range: u+0102-0103, u+0110-0111, u+0128-0129, u+0168-0169, u+01a0-01a1,
+    u+01af-01b0, u+0300-0301, u+0303-0304, u+0308-0309, u+0323, u+0329,
+    u+1ea0-1ef9, u+20ab;
+}
+@font-face {
+  font-family: __Work_Sans_14fb11;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/67354d9f27664b22-s.p.woff2) format("woff2");
+  unicode-range: u+0100-02af, u+0304, u+0308, u+0329, u+1e00-1e9f, u+1ef2-1eff,
+    u+2020, u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
+@font-face {
+  font-family: __Work_Sans_14fb11;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/6905431624c34d00-s.woff2) format("woff2");
+  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da,
+    u+02dc, u+0304, u+0308, u+0329, u+2000-206f, u+2074, u+20ac, u+2122, u+2191,
+    u+2193, u+2212, u+2215, u+feff, u+fffd;
+}
+@font-face {
+  font-family: __Work_Sans_Fallback_14fb11;
+  src: local("Arial");
+  ascent-override: 82.1%;
+  descent-override: 21.45%;
+  line-gap-override: 0%;
+  size-adjust: 113.27%;
+}
+.__className_14fb11 {
+  font-family: __Work_Sans_14fb11, __Work_Sans_Fallback_14fb11;
+  font-style: normal;
+}
+.__variable_14fb11 {
+  --work-sans: "__Work_Sans_14fb11", "__Work_Sans_Fallback_14fb11";
+}
+
+/*!
+ * smartbanner.js v1.22.0 <https://github.com/ain/smartbanner.js#readme>
+ * Copyright © 2023 Ain Tohvri, contributors. Licensed under GPL-3.0.
+ */
+.smartbanner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  width: 100%;
+  height: 84px;
+  background: #f3f3f3;
+  font-family: Helvetica, sans, sans-serif;
+}
+.smartbanner__exit {
+  position: absolute;
+  top: calc(50% - 6px);
+  left: 9px;
+  display: block;
+  margin: 0;
+  width: 12px;
+  height: 12px;
+  border: 0;
+  text-align: center;
+}
+.smartbanner__exit:after,
+.smartbanner__exit:before {
+  position: absolute;
+  width: 1px;
+  height: 12px;
+  background: #716f6f;
+  content: " ";
+}
+.smartbanner__exit:before {
+  transform: rotate(45deg);
+}
+.smartbanner__exit:after {
+  transform: rotate(-45deg);
+}
+.smartbanner__icon {
+  left: 30px;
+  width: 64px;
+  border-radius: 15px;
+  background-size: 64px 64px;
+}
+.smartbanner__icon,
+.smartbanner__info {
+  position: absolute;
+  top: 10px;
+  height: 64px;
+}
+.smartbanner__info {
+  left: 104px;
+  display: flex;
+  overflow-y: hidden;
+  width: 60%;
+  align-items: center;
+  color: #000;
+}
+.smartbanner__info__title {
+  font-size: 14px;
+}
+.smartbanner__info__author,
+.smartbanner__info__price {
+  font-size: 12px;
+}
+.smartbanner__button {
+  position: absolute;
+  top: 32px;
+  right: 10px;
+  z-index: 1;
+  display: block;
+  padding: 0 10px;
+  min-width: 10%;
+  border-radius: 5px;
+  background: #f3f3f3;
+  color: #1474fc;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+}
+.smartbanner__button__label {
+  text-align: center;
+}
+.smartbanner.smartbanner--android {
+  background: #3d3d3d
+    url("data:image/gif;base64,R0lGODlhCAAIAIABAFVVVf///yH5BAEHAAEALAAAAAAIAAgAAAINRG4XudroGJBRsYcxKAA7");
+  box-shadow: inset 0 4px 0 #88b131;
+}
+.smartbanner.smartbanner--android .smartbanner__exit {
+  left: 6px;
+  margin-right: 7px;
+  width: 17px;
+  height: 17px;
+  border-radius: 14px;
+  background: #1c1e21;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.8),
+    0 1px 1px hsla(0, 0%, 100%, 0.3);
+  color: #b1b1b3;
+  font-family: ArialRoundedMTBold, Arial;
+  font-size: 20px;
+  line-height: 17px;
+  text-shadow: 0 1px 1px #000;
+}
+.smartbanner.smartbanner--android .smartbanner__exit:after,
+.smartbanner.smartbanner--android .smartbanner__exit:before {
+  top: 3px;
+  left: 8px;
+  width: 2px;
+  height: 11px;
+  background: #b1b1b3;
+}
+.smartbanner.smartbanner--android .smartbanner__exit:active,
+.smartbanner.smartbanner--android .smartbanner__exit:hover {
+  color: #eee;
+}
+.smartbanner.smartbanner--android .smartbanner__icon {
+  background-color: transparent;
+  box-shadow: none;
+}
+.smartbanner.smartbanner--android .smartbanner__info {
+  color: #ccc;
+  text-shadow: 0 1px 2px #000;
+}
+.smartbanner.smartbanner--android .smartbanner__info__title {
+  color: #fff;
+  font-weight: 700;
+}
+.smartbanner.smartbanner--android .smartbanner__button {
+  top: 30px;
+  right: 20px;
+  padding: 0;
+  min-width: 12%;
+  border-radius: 0;
+  background: none;
+  box-shadow: 0 0 0 1px #333, 0 0 0 2px #dddcdc;
+  color: #d1d1d1;
+  font-size: 14px;
+  font-weight: 700;
+}
+.smartbanner.smartbanner--android .smartbanner__button:active,
+.smartbanner.smartbanner--android .smartbanner__button:hover {
+  background: none;
+}
+.smartbanner.smartbanner--android .smartbanner__button__label {
+  display: block;
+  padding: 0 10px;
+  background: #42b6c9;
+  background: linear-gradient(180deg, #42b6c9, #39a9bb);
+  box-shadow: none;
+  line-height: 24px;
+  text-align: center;
+  text-shadow: none;
+  text-transform: none;
+}
+.smartbanner.smartbanner--android .smartbanner__button__label:active,
+.smartbanner.smartbanner--android .smartbanner__button__label:hover {
+  background: #2ac7e1;
+}
