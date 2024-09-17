@@ -58,6 +58,10 @@ hr {
   height: 0;
   color: inherit;
   border-top-width: 1px;
+  margin: 40px 0px;
+  background: rgba(255, 255, 255, 0.201) !important;
+  color: rgba(255, 255, 255, 0.201);
+
 }
 abbr:where([title]) {
   -webkit-text-decoration: underline dotted;
@@ -175,7 +179,6 @@ h3,
 h4,
 h5,
 h6,
-hr,
 p,
 pre {
   margin: 0;
