@@ -1,3 +1,5 @@
+@import url("./main.4c6a363988a4aead5503.css");
+
 .NavigationItem_styledAnchor__1MLQY {
   display: block;
   color: #fff;
@@ -1122,7 +1124,7 @@ video {
 }
 .bg-\[\#ff2d60\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 45 96 / var(--tw-bg-opacity));
+  background-color: rgb(254 96 22 / var(--tw-bg-opacity));
 }
 .bg-\[\#ff426f\] {
   --tw-bg-opacity: 1;
@@ -1572,14 +1574,14 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 :root {
-  --color-primary: green;
-  --color-primary-80: #ebbdc8;
+  --color-primary: #fe6016;
+  --color-primary-80: #fe9031;
   --color-primary-60: #ff567f;
   --color-primary-40: #141414;
   --color-primary-20: #ff819f;
   --color-secondary-blue: #5b95bf;
-  --color-secondary-red: green;
-  --color-secondary-pink: #ef90a4;
+  --color-secondary-red: #fe6016;
+  --color-secondary-pink: #fe9031;
   --color-bright-yellow: #fff13d;
   --color-gray: #9098a2;
   --color-gray-dark: #050505;

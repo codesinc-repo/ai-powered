@@ -297,10 +297,10 @@ data-styled.g27[id="sc-6fdf2fa8-3"] {
   position: relative;
   text-decoration: none;
 } 
-.ebriXW:hover {
+a:hover {
   opacity: 0.7;
   transition: all 200ms ease-in-out;
-  color: #fe6016;
+  color: #fe6016 !important;
 } 
 .ebriXW:before {
   content: "";
