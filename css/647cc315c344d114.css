@@ -741,6 +741,15 @@ button {
     background: none;
   } 
 }     
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+.answer.open{
+  max-height: 1000px !important;
+}
+
 
 .eUSarm { 
     display: flex; 
@@ -749,7 +758,7 @@ button {
     justify-content: center; 
     padding: 12px 10px; 
     border-radius: 16px 16px 0px 0px; 
-    width: 140px; 
+    /* width: 140px;  */
     white-space: normal; 
     text-align: center;
 } 

@@ -1835,15 +1835,9 @@ video {
   transform-origin: center center;
   background-image: linear-gradient(
     to right top,
-    #fd1e00,
     #fd4900,
-    #e68b45,
-    #f55195,
-    #ff6188,
-    #f7ce17,
-    #ff965b,
-    #f5b255,
-    #e1cd60
+    #ff8c03
+   
   );
   width: 500px;
   height: 500px;
@@ -1873,23 +1867,16 @@ video {
 .glow-bg-2,
 .glow-bg-3 {
   transform-origin: center center;
-  background-image: linear-gradient(
-    to right top,
-    #fd1e00,
-    #fd4900,
-    #e68b45,
-    #f55195,
-    #ff6188,
-    #f7ce17,
-    #ff965b,
-    #f5b255,
-    #e1cd60
-  );
+  background-image: linear-gradient(    to right top,    #fe6016,  #fe9031, #ffd215  );
   position: absolute;
   left: 50%;
   border-radius: 20px;
-  transform: skewY(-15deg) translate(-50%, -50%) scale(0.7) translateZ(0);
+  transform: skewY(-20deg) translate(-50%, -50%) scale(0.7) translateZ(0);
   pointer-events: none;
+  -webkit-transform: skewY(-20deg) translate(-50%, -50%) scale(0.7) translateZ(0);
+  -moz-transform: skewY(-20deg) translate(-50%, -50%) scale(0.7) translateZ(0);
+  -ms-transform: skewY(-20deg) translate(-50%, -50%) scale(0.7) translateZ(0);
+  -o-transform: skewY(-20deg) translate(-50%, -50%) scale(0.7) translateZ(0);
 }
 .glow-bg-3 {
   width: 400px;
